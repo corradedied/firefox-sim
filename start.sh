@@ -1,7 +1,6 @@
 #!/usr/bin/env bash
 export DISPLAY=:99
 
-# Cleanly close Firefox when Replit stops the workflow
 cleanup() {
   pkill -TERM firefox || true
   sleep 2
@@ -27,12 +26,13 @@ cat << 'EOF' > ~/.config/openbox/rc.xml
 </openbox_config>
 EOF
 
-# Start lightweight window manager with custom keybind
+# Start lightweight window manager
 openbox --config-file ~/.config/openbox/rc.xml &
 sleep 1
 
-# Start Firefox maximized
-firefox &
+# Start Firefox using persistent workspace folder
+mkdir -p ~/workspace/firefox-profile
+firefox -profile "$HOME/workspace/firefox-profile" &
 sleep 3
 wmctrl -r :ACTIVE: -b add,maximized_vert,maximized_horz || true
 

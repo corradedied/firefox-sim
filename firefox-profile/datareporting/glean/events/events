@@ -1,0 +1,5 @@
+{"timestamp":4446589,"category":"webcompatreporting","name":"reason_dropdown","extra":{"setting":"required","glean_timestamp":"1795200142656"}}
+{"timestamp":4449043,"category":"addons_manager","name":"manage","extra":{"source":"system-addon","glean_timestamp":"1795200145109","addon_type":"extension","method":"disable","addon_id":"screenshots@mozilla.org"}}
+{"timestamp":4449642,"category":"nimbus_events","name":"is_ready","extra":{"glean_timestamp":"1795200145708"}}
+{"timestamp":4467089,"category":"addons_manager","name":"manage","extra":{"addon_type":"other","source":"gmp-plugin","glean_timestamp":"1795200163155","addon_id":"gmp-gmpopenh264","method":"uninstall"}}
+{"timestamp":4475877,"category":"nimbus_events","name":"is_ready","extra":{"glean_timestamp":"1795200171943"}}
