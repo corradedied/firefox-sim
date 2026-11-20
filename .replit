@@ -1,0 +1,13 @@
+run = "bash start.sh"
+
+[nix]
+channel = "stable-24_05"
+packages = ["firefox", "xorg.xorgserver", "x11vnc", "novnc", "openbox", "wmctrl", "xbindkeys", "xdotool"]
+
+[[ports]]
+localPort = 8080
+externalPort = 80
+
+[deployment]
+deploymentTarget = "cloudrun"
+run = "bash start.sh"
