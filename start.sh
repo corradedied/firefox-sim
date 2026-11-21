@@ -194,120 +194,314 @@ echo "VNC server ready on localhost:$VNC_PORT"
 # --------------------------------------------------
 
 
+
 # --------------------------------------------------
 # 5. Start customized noVNC
 # --------------------------------------------------
 
-NOVNC_BIN="$(readlink -f "$(command -v novnc)")"
-NOVNC_ROOT="$(dirname "$(dirname "$NOVNC_BIN")")"
-NOVNC_SOURCE="$NOVNC_ROOT/share/webapps/novnc"
-if [[ ! -f "$NOVNC_SOURCE/vnc.html" ]]; then
-    NOVNC_SOURCE="$NOVNC_ROOT/share/novnc"
-fi
-NOVNC_CUSTOM="$ROOT_DIR/.novnc-custom"
+NOVNC_BIN="$(command -v novnc || true)"
 
-if [[ ! -f "$NOVNC_SOURCE/vnc.html" ]]; then
-    echo "ERROR: Could not locate noVNC web files at:"
-    echo "$NOVNC_SOURCE"
+if [[ -z "$NOVNC_BIN" ]]; then
+    echo "ERROR: novnc executable not found."
     exit 1
 fi
 
-# Copy installed noVNC files into the writable project directory.
+NOVNC_BIN="$(readlink -f "$NOVNC_BIN")"
+NOVNC_ROOT="$(dirname "$(dirname "$NOVNC_BIN")")"
+
+# Locate the installed noVNC web directory.
+NOVNC_SOURCE=""
+
+for candidate in \
+    "$NOVNC_ROOT/share/webapps/novnc" \
+    "$NOVNC_ROOT/share/novnc" \
+    "$NOVNC_ROOT/share/noVNC" \
+    "$NOVNC_ROOT/share/webapps/noVNC"
+do
+    if [[ -f "$candidate/vnc.html" && -f "$candidate/app/ui.js" ]]; then
+        NOVNC_SOURCE="$candidate"
+        break
+    fi
+done
+
+if [[ -z "$NOVNC_SOURCE" ]]; then
+    echo "ERROR: Could not locate noVNC web files."
+    echo "Executable: $NOVNC_BIN"
+    echo "Package root: $NOVNC_ROOT"
+    exit 1
+fi
+
+echo "[noVNC] Source: $NOVNC_SOURCE"
+
+# Create a writable customized copy.
+NOVNC_CUSTOM="$ROOT_DIR/.novnc-custom"
+
 rm -rf "$NOVNC_CUSTOM"
 mkdir -p "$NOVNC_CUSTOM"
+
 cp -a "$NOVNC_SOURCE/." "$NOVNC_CUSTOM/"
 chmod -R u+w "$NOVNC_CUSTOM"
 
-# Install the keyboard remapper inside noVNC's existing UI module.
-UI_JS="$NOVNC_CUSTOM/app/ui.js"
-TEMP_JS="$UI_JS.tmp"
+# --------------------------------------------------
+# Create shortcut remapping module
+# --------------------------------------------------
 
-if ! awk '
-/^export default UI;$/ {
-    seen = 1
-    print ""
-    print "// Custom Alt-to-Ctrl shortcut remapping"
-    print "let altShortcutActive = false;"
-    print ""
-    print "const suppressShortcut = (event) => {"
-    print "    event.preventDefault();"
-    print "    event.stopPropagation();"
-    print "    event.stopImmediatePropagation();"
-    print "};"
-    print ""
-    print "const isEditableTarget = (target) =>"
-    print "    target instanceof Element && target.closest("
-    print "        \"input, textarea, select, [contenteditable=true]\""
-    print "    ) !== null;"
-    print ""
-    print "window.addEventListener(\"keydown\", (event) => {"
-    print "    if (!UI.connected || !UI.rfb) return;"
-    print ""
-    print "    if (event.key === \"Alt\" && !event.ctrlKey && !event.metaKey) {"
-    print "        if (isEditableTarget(event.target)) return;"
-    print "        altShortcutActive = true;"
-    print "        suppressShortcut(event);"
-    print "        if (event.shiftKey) {"
-    print "            UI.rfb.sendKey(KeyTable.XK_Shift_L, \"ShiftLeft\", false);"
-    print "        }"
-    print "        return;"
-    print "    }"
-    print ""
-    print "    if (!altShortcutActive) return;"
-    print "    suppressShortcut(event);"
-    print ""
-    print "    if ([\"Alt\", \"Shift\", \"Control\", \"Meta\"].includes(event.key)) return;"
-    print "    if (!event.code || !UI.rfb) return;"
-    print ""
-    print "    const rfb = UI.rfb;"
-    print "    rfb.sendKey(KeyTable.XK_Control_L, \"ControlLeft\", true);"
-    print ""
-    print "    if (event.shiftKey) {"
-    print "        rfb.sendKey(KeyTable.XK_Shift_L, \"ShiftLeft\", true);"
-    print "    }"
-    print ""
-    print "    rfb.sendKey(0, event.code);"
-    print ""
-    print "    if (event.shiftKey) {"
-    print "        rfb.sendKey(KeyTable.XK_Shift_L, \"ShiftLeft\", false);"
-    print "    }"
-    print ""
-    print "    rfb.sendKey(KeyTable.XK_Control_L, \"ControlLeft\", false);"
-    print "}, true);"
-    print ""
-    print "window.addEventListener(\"keyup\", (event) => {"
-    print "    if (!altShortcutActive) return;"
-    print "    suppressShortcut(event);"
-    print "    if (event.key === \"Alt\") altShortcutActive = false;"
-    print "}, true);"
-    print ""
-    print "window.addEventListener(\"blur\", () => {"
-    print "    altShortcutActive = false;"
-    print "}, true);"
-    print ""
+cat > "$NOVNC_CUSTOM/replit-shortcuts.js" <<'JAVASCRIPT'
+
+import UI from "./app/ui.js";
+
+console.info("[Replit Shortcuts] Module loaded.");
+
+const CONTROL = 0xffe3;
+const SHIFT = 0xffe1;
+const ALT = 0xffe9;
+
+const ALT_CODES = /^(Key[A-Z]|Digit[0-9])$/;
+
+let altActive = false;
+let shiftActive = false;
+
+const suppressedCodes = new Set();
+
+function stopEvent(event) {
+    event.preventDefault();
+    event.stopPropagation();
+    event.stopImmediatePropagation();
 }
-{ print }
-END {
-    if (!seen) exit 42
+
+function isNoVNCControl(target) {
+    if (!(target instanceof Element)) return false;
+
+    return target.closest(
+        "#noVNC_control_bar, " +
+        "#noVNC_connect_dlg, " +
+        "#noVNC_credentials_dlg, " +
+        "#noVNC_verify_server_dlg, " +
+        "#noVNC_settings, " +
+        "#noVNC_clipboard"
+    ) !== null;
 }
-' "$UI_JS" > "$TEMP_JS"; then
-    echo "ERROR: Could not inject keyboard remapping."
-    rm -f "$TEMP_JS"
+
+function sendRemappedShortcut(event) {
+    const rfb = UI.rfb;
+
+    if (!rfb || !UI.connected || rfb.viewOnly) {
+        UI.showStatus("Firefox desktop is unavailable.", "warning");
+        return;
+    }
+
+    const useShift = event.shiftKey || shiftActive;
+
+    // Linux Firefox natively uses Alt+1 through Alt+9
+    // for tab navigation. Other shortcuts use Ctrl.
+    const isTabShortcut = /^Digit[1-9]$/.test(event.code);
+
+    let keysym;
+
+    if (/^Key[A-Z]$/.test(event.code)) {
+        const letter = event.code.slice(3);
+
+        keysym = (useShift
+            ? letter.toUpperCase()
+            : letter.toLowerCase()
+        ).charCodeAt(0);
+
+    } else if (/^Digit[0-9]$/.test(event.code)) {
+        keysym = event.code.slice(5).charCodeAt(0);
+
+    } else {
+        return;
+    }
+
+    const modifierKeysym = isTabShortcut ? ALT : CONTROL;
+    const modifierCode = isTabShortcut ? "AltLeft" : "ControlLeft";
+
+    let modifierPressed = false;
+    let shiftPressed = false;
+
+    try {
+        rfb.sendKey(modifierKeysym, modifierCode, true);
+        modifierPressed = true;
+
+        if (useShift) {
+            rfb.sendKey(SHIFT, "ShiftLeft", true);
+            shiftPressed = true;
+        }
+
+        rfb.sendKey(keysym, event.code, true);
+        rfb.sendKey(keysym, event.code, false);
+
+        console.info(
+            `[Replit Shortcuts] Alt+${event.code} forwarded as ` +
+            `${isTabShortcut ? "Alt" : "Ctrl"}${useShift ? "+Shift" : ""}`
+        );
+
+        UI.showStatus(
+            isTabShortcut
+                ? `Firefox tab ${event.code.slice(5)}`
+                : `Firefox shortcut: Ctrl+${event.code.replace("Key", "")}`,
+            "normal",
+            1000
+        );
+
+    } catch (error) {
+        console.error("[Replit Shortcuts] Failed:", error);
+
+    } finally {
+        if (shiftPressed) {
+            rfb.sendKey(SHIFT, "ShiftLeft", false);
+        }
+
+        if (modifierPressed) {
+            rfb.sendKey(modifierKeysym, modifierCode, false);
+        }
+    }
+}
+
+// --------------------------------------------------
+// Capture keyboard shortcuts
+// --------------------------------------------------
+
+window.addEventListener("keydown", (event) => {
+
+    const altKey =
+        event.code === "AltLeft" ||
+        event.code === "AltRight";
+
+    // Capture the physical Alt key.
+    if (altKey) {
+        if (!UI.connected || !UI.rfb || isNoVNCControl(event.target)) {
+            return;
+        }
+
+        altActive = true;
+        stopEvent(event);
+        return;
+    }
+
+    if (!altActive) return;
+
+    // Preserve Shift without allowing the host browser
+    // to process it independently.
+    if (
+        event.code === "ShiftLeft" ||
+        event.code === "ShiftRight"
+    ) {
+        shiftActive = true;
+        suppressedCodes.add(event.code);
+        stopEvent(event);
+        return;
+    }
+
+    // Only remap letters and number-row keys.
+    if (!ALT_CODES.test(event.code)) return;
+
+    if (!UI.connected || !UI.rfb) return;
+
+    stopEvent(event);
+    suppressedCodes.add(event.code);
+
+    // Alt+N is intentionally disabled.
+    if (event.code === "KeyN") return;
+
+    sendRemappedShortcut(event);
+
+}, true);
+
+// --------------------------------------------------
+// Release captured physical keys
+// --------------------------------------------------
+
+window.addEventListener("keyup", (event) => {
+
+    if (suppressedCodes.has(event.code)) {
+        stopEvent(event);
+        suppressedCodes.delete(event.code);
+
+        if (
+            event.code === "ShiftLeft" ||
+            event.code === "ShiftRight"
+        ) {
+            shiftActive = false;
+        }
+
+        return;
+    }
+
+    if (
+        event.code === "AltLeft" ||
+        event.code === "AltRight"
+    ) {
+        if (altActive) {
+            stopEvent(event);
+        }
+
+        altActive = false;
+        shiftActive = false;
+    }
+
+}, true);
+
+// Reset the remapper when the page loses focus.
+window.addEventListener("blur", () => {
+    altActive = false;
+    shiftActive = false;
+    suppressedCodes.clear();
+});
+
+console.info("[Replit Shortcuts] Alt-to-Ctrl remapping initialized.");
+
+JAVASCRIPT
+
+# --------------------------------------------------
+# Add the module to noVNC's actual entry page
+# --------------------------------------------------
+
+VNC_HTML="$NOVNC_CUSTOM/vnc.html"
+TEMP_HTML="$VNC_HTML.tmp"
+
+if ! grep -q 'replit-shortcuts.js' "$VNC_HTML"; then
+
+    if ! awk '
+        /<\/head>/ && !inserted {
+            print "    <script type=\"module\" src=\"./replit-shortcuts.js\"></script>"
+            inserted = 1
+        }
+
+        { print }
+
+        END {
+            if (!inserted) exit 1
+        }
+    ' "$VNC_HTML" > "$TEMP_HTML"; then
+
+        echo "ERROR: Could not patch noVNC vnc.html."
+        rm -f "$TEMP_HTML"
+        exit 1
+    fi
+
+    mv "$TEMP_HTML" "$VNC_HTML"
+fi
+
+# Verify both files exist and the page references the module.
+if ! grep -q 'replit-shortcuts.js' "$VNC_HTML"; then
+    echo "ERROR: Shortcut module reference missing."
     exit 1
 fi
 
-# Ensure the patch was inserted.
-if ! grep -q "Custom Alt-to-Ctrl shortcut remapping" "$TEMP_JS"; then
-    echo "ERROR: Keyboard remapping was not installed."
-    rm -f "$TEMP_JS"
+if ! grep -q 'Alt-to-Ctrl remapping initialized' "$NOVNC_CUSTOM/replit-shortcuts.js"; then
+    echo "ERROR: Shortcut module verification failed."
     exit 1
 fi
 
-mv "$TEMP_JS" "$UI_JS"
+echo "[noVNC] Custom keyboard module installed."
+echo "[noVNC] Custom web root: $NOVNC_CUSTOM"
+echo "[noVNC] Alt-to-Ctrl shortcut remapping enabled."
 
-echo "Custom keyboard remapping installed."
+# --------------------------------------------------
+# Start noVNC
+# --------------------------------------------------
 
-# Launch customized noVNC.
 novnc \
     --vnc "127.0.0.1:${VNC_PORT}" \
     --listen "0.0.0.0:${WEB_PORT}" \
@@ -318,7 +512,8 @@ PIDS+=("$NOVNC_PID")
 
 echo "----------------------------------------"
 echo "Firefox desktop is ready."
-echo "Open /vnc.html in the Replit webview."
+echo "Keyboard remapping: Alt -> Ctrl"
+echo "Open /vnc.html"
 echo "----------------------------------------"
 
 wait "$NOVNC_PID"
