@@ -1,2 +1,2 @@
-{"timestamp":8900477,"category":"webcompatreporting","name":"reason_dropdown","extra":{"glean_timestamp":"1795259604155","setting":"required"}}
-{"timestamp":8902152,"category":"nimbus_events","name":"is_ready","extra":{"glean_timestamp":"1795259605831"}}
+{"timestamp":12609442,"category":"webcompatreporting","name":"reason_dropdown","extra":{"setting":"required","glean_timestamp":"1795263313120"}}
+{"timestamp":12611196,"category":"nimbus_events","name":"is_ready","extra":{"glean_timestamp":"1795263314875"}}
