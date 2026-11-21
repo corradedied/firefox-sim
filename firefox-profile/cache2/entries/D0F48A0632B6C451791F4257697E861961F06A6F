@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="chrome://browser/content/contentSearchUI.css" />
     <link rel="stylesheet" href="chrome://activity-stream/content/css/activity-stream.css" />
   </head>
-  <!-- Cached: Fri, 20 Nov 2026 18:42:30 GMT -->
+  <!-- Cached: Sat, 21 Nov 2026 11:13:30 GMT -->
   <body class="activity-stream">
     <div id="header-asrouter-container" role="presentation"></div>
     <div id="root">
@@ -35,14 +35,30 @@ window.__STARTUP_STATE__ = {
 		"rows": [
 			{
 				"isDefault": true,
-				"url": "https://www.amazon.com/blackfriday?tag=admarketus-20&ref=pd_sl_892d310f753eddecaa68a170fc3bcb60ed6919aa0dccceef7f46c76c&hvpub=1007&mfadid=adm",
+				"url": "https://www.walmart.com/?adid=22222222246360549440_3613_3175&wmlspartner=wmtlabs&veh=sem&wl0=exact&wl4=360549440&wl9=tiles&admclid=382484492332318720&mfadid=adm",
+				"hostname": "walmart",
+				"sendAttributionRequest": false,
+				"label": "Walmart",
+				"show_sponsored_label": true,
+				"sponsored_position": 1,
+				"sponsored_click_url": "https://bridge.pdx1.admarketplace.net/ctp?version=1.0.0&encp=x9IwxQkY7ncqxnwqgCfafQ2a4p2_fQfZfQfX1pxYftINI94vIpkZ1p8k1p2k1C8kfZxX1pHd4QbnxmXVj%3D_dJCkX7RedHReTiF2zfCbW4YIWjF7Qx%3DfzftaWfplnx9EOiF2zfCbW4YIYIGcdj%3DfzfCx_4C8d1pHW1C8X1BIqIG4kjG7TgFNkj9eZ7C4e7C7%3D7C7%3Djrjr5RjNJ%3DdNxR2UHmzu7C7%3D7C4%3DHF3vItDZ3p8YfQ8YfQ8YfQ2mfZHW4C2_4p2WGZfmfC4KfZlr4BDY4RjuJ94WHG7kJnEY7C4ljmdkJ%3DcOxYDY4RIwitDZ394wJBDY4RjTftDZ3%3DEaHF4k7C8mjmWk7C4lfZHW4C2_4p2W7C8mjmW_7C4lj%3DwTIGfwfQINI%3DdQJ%3Dwq7C4lfZLY4pLk4pqYfZfYfZla4Z8W7C8mJFINI%3Dwq7C4lHF3u7ncqjn4WHZkW5QDdfpbnHF3mHmcux%3DwqgCfX4ZDnHF3mHr7vIpkXfQx_4OINI9IvIpkX4Clr7ncqjncvIpk_1Cx_7ncqjn7YiF2zfCfdfYINI9IojmwqgCfmfpDk1C2kftINI9IvJmwqgC8kfQHnHF3mHFXRJZ8zCGvRsD_lIZe13%3Du_CGv4sDdP3C31sqwr7nIwIF3vIpkX7nIwIF3kiF2zfBInIFEqIF7WgCbUftInIFEqx93vIpkZ",
+				"sponsored_impression_url": "https://imp.mt48.net/static?id=7RHzfOIXjFEYsBdvIpkZ1p8k1p2k1C8ZfZ8ZfCLrfQbnj9wWIBdvIpkY7n4YIFckiGIw5FwqgClY4Zqm7ReTHF4wJFEUjtdvIpkXfpbr7ncq5G4wJ%3DEQj%3DwVJOdvIpkZ1p8k1p2k1C8kfZxX1pHd4QbnxmXVjtdUjFdOIG8zfBInIFEqGmwqgClnInEwIczksGewGmwqgClnIGNkIG7UHFXKHnwqGreYiF4wg2yy",
+				"sponsored_tile_id": 1517,
+				"partner": "amp",
+				"favicon": "https://ads-img.mozilla.org/v1/images?image_data=CnAKbmh0dHBzOi8vYW1wLWFzc2V0LjQ1dHUxYzAuY29tL2Fzc2V0cy8xNTE3LzBhMGNlZWQ0ZTUzZjg3MmZiZGNhNjlhNGQ5YmEyYzZkZjI1MzkyNGM3NmEyZDU3NWJjZTQyMTAxYTlmNTMyZTMuanBnEiAnwYLVER8GiWF49kmeNQF-Wa63k22PakgyzZ_Ea8E2eg",
+				"faviconSize": 200,
+				"typedBonus": true
+			},
+			{
+				"isDefault": true,
+				"url": "https://www.amazon.com/blackfriday?tag=admarketus-20&ref=pd_sl_d46d0f5b96ab5588233ba5522e0ec268048a5e754e0f2502d324dc35&hvpub=1007&mfadid=adm",
 				"hostname": "amazon",
 				"sendAttributionRequest": false,
 				"label": "Amazon",
 				"show_sponsored_label": true,
-				"sponsored_position": 1,
-				"sponsored_click_url": "https://bridge.pdx1.admarketplace.net/ctp?version=1.0.0&encp=x9IwxQkY7ncqxnwqgCfafQ8Z4ClW1CbZ4QH_fC2d4OINI94vIpkZ1p8YfZDXfpqX4pq_fpH_4p2nxmXVj%3D_dJCkX7RedHReTiF2zfCbW4YIWjF7Qx%3DfzftaWfplnx9EOiF2zfCbW4YIYIGcdj%3DfzfCx_4Cl_1CldfCHW1BIqIG4kjG7TgFNkj9eZ7C4e7C7%3D7C7%3Djrjr5ncuHGvVJO_QJmkwfqIOJ%3DcQimIYiF3NsBDZ3R3NIYDZ3%3DcqJFcYimEkjGfufQbwfQIYIFHwfk3WIczZJcAa1C7qfZlWIQxdfmEqI%3DEQHFlm1%3DlX4ZenHZ4OHm8mf%3DEq4QqX1FcNf%3D3QHm4wIFHrIQ2mHZxmHYDY4nNmx9EO7C4lfCbW4YDY4ndnHF3vItDZ3%3DcqJBINI9IQx%3DfzftaY4C8W7ncqjn4NJGevIpkXfplk7ncqjn4YiF2z1pfWfBINI9IvIpkr4pfWfBINI9INiF2z4QLYfBINI9IOxnwqgClWfCqnHF3mirjvIpkZ4CxafZLk4CqnHF3miFzvIpkYfplY7ncqjncTImAYgF49DnIQfRNnCk3osEvlCGN43dqZCw31Jcv9DnXIfqI%2FCnv%2FildDHrjiJDdPFFd1iD_S2nXi3cqdCE3TicwD2nuIfq_SFwjFJDaYFCe1JDkZCnd47ncqjncTImAZgDdCf9NfElwkCEfWsl_PHr31DZeaCkfWslXD3G3fEclZCw33fk_lHZc4infW7nIwIF3vIpkX7nIwIF3kiF2zfBInIFEqIF7WgCbUftInIFEqx93vIpkZ",
-				"sponsored_impression_url": "https://imp.mt48.net/static?id=7RHzfOIXjFEYsBdvIpkZ1p8YfZDXfpqWfZHm1Clk4CHnj9wWIBdvIpkY7n4YIFckiGIw5FwqgCLZfplnx%3DXNHmEuIF%2Bk5FwqgClWfpxnHF2uxmETIF4kiFzU5FwqgCfafQ8Z4ClW1Clk1CqW4Qqk4tIZJ%3Dzk5F%2BdJF7wxQkX7nIwIF3KiF2zfBInIFEqGr3%2Bx%3DEKiF2zfBIws93wxn%2BNJczOiF3Kx97vHmDz",
+				"sponsored_position": 2,
+				"sponsored_click_url": "https://bridge.pdx1.admarketplace.net/ctp?version=1.0.0&encp=x9IwxQkY7ncqxnwqgCfafQ2a4p2_fQfZfQfX1pxYftINI94vIpkZ1p8k1p2k1C8kfZxX1pHd4QlnxmXVj%3D_dJCkY7RedHReTiF2zfCbW4YIWjF7Qx%3DfzftaWfplnx9EOiF2zfCbW4YIYIGcdj%3DfzfCx_4C8d1pHW1C8YftIqIG4kjG7TgFNkj9eZ7C4e7C7%3D7C7%3Djrjr5ncuHGvVJO_QJmkwfqIOJ%3DcQimIYiF3NsBDZ3R3NIYDZ3%3DcqJFcYimEkjGfufQbwfQIYIFHwfk3WIczZJczq4pIqf%3DHdHQqmHF8d4CLafQfZHnld4C8YICewHZ8m1pbk1%3DldICxd4%3DDWIQ8dfp7qfZ8kI%3DfZ4BDY4nNmx9EO7C4lfCbW4YDY4ndnHF3vItDZ3%3DcqJBINI9IQx%3DfzftaY4C8W7ncqjn4NJGevIpkXfplk7ncqjn4YiF2z1pfWfBINI9IvIpkr4pfWfBINI9INiF2z4QLYfBINI9IOxnwqgClWfCqnHF3mirjvIpkZ4CxafZLk4CqnHF3miFzvIpkYfplY7ncqjncTImAYgF49DnIQfRNnFq33fwvl2nd1EkqdCnd%3DiD_DEC3g3lwPCC76il_DEGw4JEErFwj4sD_SIrj13%3DN%2FCwjEfk_DDnX43dw_Cw3esEvlCGw13d7SCGvE7ncqjncTImAZgDdCf9NfElwkCEfWsl_PHr31iCeaCDfWslXD3G3fE%3DxdCGveslzlIrvgElE_7nIwIF3vIpkX7nIwIF3kiF2zfBInIFEqIF7WgCbUftInIFEqx93vIpkZ",
+				"sponsored_impression_url": "https://imp.mt48.net/static?id=7RHzfOIXjFEYsBdvIpkZ1p8k1p2k1C8ZfZ8ZfCLrfQbnj9wWIBdvIpkY7n4YIFckiGIw5FwqgCLZfplnx%3DXNHmEuIF%2Bk5FwqgClWfpxnHF2uxmETIF4kiFzU5FwqgCfafQ2a4p2%2BfQ2Z4Zla4QDmfBIZJ%3Dzk5F%2BdJF7wxQkY7nIwIF3KiF2zfBInIFEqGr3%2Bx%3DEKiF2zfBIws93wxn%2BNJczOiF3Kx97vHmDz",
 				"sponsored_tile_id": 74301,
 				"partner": "amp",
 				"favicon": "https://ads-img.mozilla.org/v1/images?image_data=CjoKOGh0dHBzOi8vYW1wLWFzc2V0LjQ1dHUxYzAuY29tL2Fzc2V0cy8xMDExLzE2MDI1MTczODUuanBnEiCPWEpTJukrjsNjZdZ-ENKI3O38x6nmTcNlFXn6RNaaQQ",
@@ -51,33 +67,17 @@ window.__STARTUP_STATE__ = {
 			},
 			{
 				"isDefault": true,
-				"url": "https://www.expedia.com/partnernetwork/p/gp/camref:1100l3ZXvb/pubref:382235109036691456?mfadid=adm",
+				"url": "https://www.expedia.com/partnernetwork/p/gp/camref:1100l3ZXvb/pubref:382484492332318720?mfadid=adm",
 				"hostname": "expedia",
 				"sendAttributionRequest": false,
 				"label": "Expedia",
 				"show_sponsored_label": true,
-				"sponsored_position": 2,
-				"sponsored_click_url": "https://bridge.pdx1.admarketplace.net/ctp?version=1.0.0&encp=x9IwxQkY7ncqxnwqgCfafQ8Z4ClW1CbZ4QH_fC2d4OINI94vIpkZ1p8YfZDXfpqX4pq_fpH_4pDnxmXVj%3D_dJCkY7RedHReTiF2zfCbW4YIWjF7Qx%3DfzftaWfplnx9EOiF2zfCbW4YIYIGcdj%3DfzfCx_4Cl_1CldfCHXftIqIG4kjG7TgFNkj9eZ7C4e7C7%3D7C7%3Djrjr5nEax%3DEqiFlUHmzu7C7%3Dx%3DcYj%3D_wxn_wj9jVxnTwfqIW7C7%3DIrbwfqIQHFdYIFHwfklXfCbWJp4iF9IO7C7%3Dx9EOxnEn7C4efZLYfQfdfCb_fpfm4QqX4pDm7C4%3DJFINI%3Dwq7C4lHF3u7ncqjn4WHZkX5QbafpbnHF3mHmcux%3DwqgC8_fQ8nHF3mHr7vIpkXfp2r1BINI9IvIpkr4ClrfBINI9INiF2z1pfXftINI9IOxnwqgClk4ZfnHF3mirjvIpkZ4CLa1pHWfC2nHF3miFzvIpkXfZHd7ncqjncTImAYgDdPIrw4iqkXCE3e4DdlCC71inuaCq3EfOInIFEqiF2zfBInIFEqj%3DwqgClnInEwI%3DEOxpkW5QbnInEwI9ekiF2zfWyy",
-				"sponsored_impression_url": "https://imp.mt48.net/static?id=7RHzfOIXjFEYsBdvIpkZ1p8YfZDXfpqWfZHm1Clk4CHnj9wWIBdvIpkY7n4YIFckiGIw5FwqgClW4px%2B7ReTHF4wJFEUjtdvIpkXfpbr7ncq5G4wJ%3DEQj%3DwVJOdvIpkZ1p8YfZDXfpqX4pq%2BfpH%2B4pDnxmXVjtdUjFdOIG8zfOInIFEqGmwqgClnInEwIczksGewGmwqgClnIGNkIG7UHFXKHnwqGreYiF4wg2yy",
+				"sponsored_position": 3,
+				"sponsored_click_url": "https://bridge.pdx1.admarketplace.net/ctp?version=1.0.0&encp=x9IwxQkY7ncqxnwqgCfafQ2a4p2_fQfZfQfX1pxYftINI94vIpkZ1p8k1p2k1C8kfZxX1pHd4Q8nxmXVj%3D_dJCkZ7RedHReTiF2zfCbW4YIWjF7Qx%3DfzftaWfplnx9EOiF2zfCbW4YIYIGcdj%3DfzfCx_4C8d1pHW1C8YftIqIG4kjG7TgFNkj9eZ7C4e7C7%3D7C7%3Djrjr5nEax%3DEqiFlUHmzu7C7%3Dx%3DcYj%3D_wxn_wj9jVxnTwfqIW7C7%3DIrbwfqIQHFdYIFHwfklXfCbWJp4iF9IO7C7%3Dx9EOxnEn7C4efZLY4pLk4pqYfZfYfZla4Z8W7C4%3DJFINI%3Dwq7C4lHF3u7ncqjn4WHZkX5QbafpbnHF3mHmcux%3DwqgC8_fQ8nHF3mHr7vIpkXfp2r1BINI9IvIpkr4ClrfBINI9INiF2z1pfXftINI9IOxnwqgClk4ZfnHF3mirjvIpkZ4CLa1pHWfC2nHF3miFzvIpkXfZHd7ncqjncTImAYgDdPIrw13%3DxWCq3osDdPCGw4sqDkCRv7jYInIFEqiF2zfBInIFEqj%3DwqgClnInEwI%3DEOxpkW5QbnInEwI9ekiF2zfWyy",
+				"sponsored_impression_url": "https://imp.mt48.net/static?id=7RHzfOIXjFEYsBdvIpkZ1p8k1p2k1C8ZfZ8ZfCLrfQbnj9wWIBdvIpkY7n4YIFckiGIw5FwqgClW4px%2B7ReTHF4wJFEUjtdvIpkXfpbr7ncq5G4wJ%3DEQj%3DwVJOdvIpkZ1p8k1p2k1C8kfZxX1pHd4Q8nxmXVjtdUjFdOIG8zfYInIFEqGmwqgClnInEwIczksGewGmwqgClnIGNkIG7UHFXKHnwqGreYiF4wg2yy",
 				"sponsored_tile_id": 75171,
 				"partner": "amp",
 				"favicon": "https://ads-img.mozilla.org/v1/images?image_data=CnAKbmh0dHBzOi8vYW1wLWFzc2V0LjQ1dHUxYzAuY29tL2Fzc2V0cy8xNDMyL2ZkNWJjODZjYjRjODg1MDgyZTY2ZGY4NzdlYjQ0OTRjZWIyYzY2ZDc2ODVlMzdhODIwNDAxYjQ3NzI4MzUwOTEuanBnEiDbDveiYPQFQ7g2IKeCTiQbPNJ-jP2XW0pTEX0dzb5N3w",
-				"faviconSize": 200,
-				"typedBonus": true
-			},
-			{
-				"isDefault": true,
-				"url": "https://bestbuy.7tiv.net/c/3798038/1671732/10014?sharedid=privacyopen&subid1=382235109036691456&mfadid=adm&subid1=382235109036691456&mfadid=adm",
-				"hostname": "bestbuy.7tiv",
-				"sendAttributionRequest": false,
-				"label": "Best Buy",
-				"show_sponsored_label": true,
-				"sponsored_position": 3,
-				"sponsored_click_url": "https://bridge.pdx1.admarketplace.net/ctp?version=1.0.0&encp=x9IwxQkY7ncqxnwqgCfafQ8Z4ClW1CbZ4QH_fC2d4OINI94vIpkZ1p8YfZDXfpqX4pq_fpH_4pHnxmXVj%3D_dJCkZ7RedHReTiF2zfCbW4YIWjF7Qx%3DfzftaWfplnx9EOiF2zfCbW4YIYIGcdj%3DfzfCx_4Cl_1CldfCHXftIqIG4kjG7TgFNkj9eZ7C4e7C7%3D7C7%3DHnEZj%3D7dsBarj%3Dwm5n_wjtDY3nfwfqHZ4Zqafpfa7C7%3DfCHrfCxZfODY3QlWfplk7C4%3DxmNNxnEqiF2wfk3WxnwmHF4_JrewJODY4R4dHnwqfBDZ3pfafQ8Z4ClW1CbZ4QH_fC2d4ODY4ndnHF3vItDZ3%3DcqJBDY4R4dHnwqfBDZ3pfafQ8Z4ClW1CbZ4QH_fC2d4ODY4ndnHF3vItDZ3%3DcqJBINI9IQx%3DfzftaYfpbW7ncqjn4NJGevIpkZ4Zlk7ncqjn4YiF2zfCqk4pbnHF3miF2z4Z2a1pxnHF3mHFwqgClk1pqZ7ncqjn7YiF2zfClY4YINI9IojmwqgCfr4CqXfpxkfOINI9IvJmwqgC8kfZLnHF3mHFXRJZ8zCGvRsDdSCCc4ElldCD34fq_SirN13cDY7nIwIF3vIpkX7nIwIF3kiF2zfBInIFEqIF7WgCbUftInIFEqx93vIpkZ",
-				"sponsored_impression_url": "https://imp.mt48.net/static?id=7RHzfOIXjFEYsBdvIpkZ1p8YfZDXfpqWfZHm1Clk4CHnj9wWIBdvIpkY7n4YIFckiGIw5FwqgCl%2B4p2W7ReTHF4wJFEUjtdvIpkXfpbr7ncq5G4wJ%3DEQj%3DwVJOdvIpkZ1p8YfZDXfpqX4pq%2BfpH%2B4pHnxmXVjtdUjFdOIG8zfYInIFEqGmwqgClnInEwIczksGewGmwqgClnIGNkIG7UHFXKHnwqGreYiF4wg2yy",
-				"sponsored_tile_id": 74887,
-				"partner": "amp",
-				"favicon": "https://ads-img.mozilla.org/v1/images?image_data=CnAKbmh0dHBzOi8vYW1wLWFzc2V0LjQ1dHUxYzAuY29tL2Fzc2V0cy8xMDE1L2JmNWMwMzkyOTA5YTVkYzY0MjhjMzk3OGIzOWZmNzU5MTliYzJiNjIwYzljMWNmYTJhMmVmY2EyNWVlOGY3MTkuanBnEiAXuialzfT3fkFBZwYfGjYefHHmKk6-rFvckUd5Pf7EHQ",
 				"faviconSize": 200,
 				"typedBonus": true
 			},
@@ -193,14 +193,30 @@ window.__STARTUP_STATE__ = {
 		"links": [
 			{
 				"isDefault": true,
-				"url": "https://www.amazon.com/blackfriday?tag=admarketus-20&ref=pd_sl_892d310f753eddecaa68a170fc3bcb60ed6919aa0dccceef7f46c76c&hvpub=1007&mfadid=adm",
+				"url": "https://www.walmart.com/?adid=22222222246360549440_3613_3175&wmlspartner=wmtlabs&veh=sem&wl0=exact&wl4=360549440&wl9=tiles&admclid=382484492332318720&mfadid=adm",
+				"hostname": "walmart",
+				"sendAttributionRequest": false,
+				"label": "Walmart",
+				"show_sponsored_label": true,
+				"sponsored_position": 1,
+				"sponsored_click_url": "https://bridge.pdx1.admarketplace.net/ctp?version=1.0.0&encp=x9IwxQkY7ncqxnwqgCfafQ2a4p2_fQfZfQfX1pxYftINI94vIpkZ1p8k1p2k1C8kfZxX1pHd4QbnxmXVj%3D_dJCkX7RedHReTiF2zfCbW4YIWjF7Qx%3DfzftaWfplnx9EOiF2zfCbW4YIYIGcdj%3DfzfCx_4C8d1pHW1C8X1BIqIG4kjG7TgFNkj9eZ7C4e7C7%3D7C7%3Djrjr5RjNJ%3DdNxR2UHmzu7C7%3D7C4%3DHF3vItDZ3p8YfQ8YfQ8YfQ2mfZHW4C2_4p2WGZfmfC4KfZlr4BDY4RjuJ94WHG7kJnEY7C4ljmdkJ%3DcOxYDY4RIwitDZ394wJBDY4RjTftDZ3%3DEaHF4k7C8mjmWk7C4lfZHW4C2_4p2W7C8mjmW_7C4lj%3DwTIGfwfQINI%3DdQJ%3Dwq7C4lfZLY4pLk4pqYfZfYfZla4Z8W7C8mJFINI%3Dwq7C4lHF3u7ncqjn4WHZkW5QDdfpbnHF3mHmcux%3DwqgCfX4ZDnHF3mHr7vIpkXfQx_4OINI9IvIpkX4Clr7ncqjncvIpk_1Cx_7ncqjn7YiF2zfCfdfYINI9IojmwqgCfmfpDk1C2kftINI9IvJmwqgC8kfQHnHF3mHFXRJZ8zCGvRsD_lIZe13%3Du_CGv4sDdP3C31sqwr7nIwIF3vIpkX7nIwIF3kiF2zfBInIFEqIF7WgCbUftInIFEqx93vIpkZ",
+				"sponsored_impression_url": "https://imp.mt48.net/static?id=7RHzfOIXjFEYsBdvIpkZ1p8k1p2k1C8ZfZ8ZfCLrfQbnj9wWIBdvIpkY7n4YIFckiGIw5FwqgClY4Zqm7ReTHF4wJFEUjtdvIpkXfpbr7ncq5G4wJ%3DEQj%3DwVJOdvIpkZ1p8k1p2k1C8kfZxX1pHd4QbnxmXVjtdUjFdOIG8zfBInIFEqGmwqgClnInEwIczksGewGmwqgClnIGNkIG7UHFXKHnwqGreYiF4wg2yy",
+				"sponsored_tile_id": 1517,
+				"partner": "amp",
+				"favicon": "https://ads-img.mozilla.org/v1/images?image_data=CnAKbmh0dHBzOi8vYW1wLWFzc2V0LjQ1dHUxYzAuY29tL2Fzc2V0cy8xNTE3LzBhMGNlZWQ0ZTUzZjg3MmZiZGNhNjlhNGQ5YmEyYzZkZjI1MzkyNGM3NmEyZDU3NWJjZTQyMTAxYTlmNTMyZTMuanBnEiAnwYLVER8GiWF49kmeNQF-Wa63k22PakgyzZ_Ea8E2eg",
+				"faviconSize": 200,
+				"typedBonus": true
+			},
+			{
+				"isDefault": true,
+				"url": "https://www.amazon.com/blackfriday?tag=admarketus-20&ref=pd_sl_d46d0f5b96ab5588233ba5522e0ec268048a5e754e0f2502d324dc35&hvpub=1007&mfadid=adm",
 				"hostname": "amazon",
 				"sendAttributionRequest": false,
 				"label": "Amazon",
 				"show_sponsored_label": true,
-				"sponsored_position": 1,
-				"sponsored_click_url": "https://bridge.pdx1.admarketplace.net/ctp?version=1.0.0&encp=x9IwxQkY7ncqxnwqgCfafQ8Z4ClW1CbZ4QH_fC2d4OINI94vIpkZ1p8YfZDXfpqX4pq_fpH_4p2nxmXVj%3D_dJCkX7RedHReTiF2zfCbW4YIWjF7Qx%3DfzftaWfplnx9EOiF2zfCbW4YIYIGcdj%3DfzfCx_4Cl_1CldfCHW1BIqIG4kjG7TgFNkj9eZ7C4e7C7%3D7C7%3Djrjr5ncuHGvVJO_QJmkwfqIOJ%3DcQimIYiF3NsBDZ3R3NIYDZ3%3DcqJFcYimEkjGfufQbwfQIYIFHwfk3WIczZJcAa1C7qfZlWIQxdfmEqI%3DEQHFlm1%3DlX4ZenHZ4OHm8mf%3DEq4QqX1FcNf%3D3QHm4wIFHrIQ2mHZxmHYDY4nNmx9EO7C4lfCbW4YDY4ndnHF3vItDZ3%3DcqJBINI9IQx%3DfzftaY4C8W7ncqjn4NJGevIpkXfplk7ncqjn4YiF2z1pfWfBINI9IvIpkr4pfWfBINI9INiF2z4QLYfBINI9IOxnwqgClWfCqnHF3mirjvIpkZ4CxafZLk4CqnHF3miFzvIpkYfplY7ncqjncTImAYgF49DnIQfRNnCk3osEvlCGN43dqZCw31Jcv9DnXIfqI%2FCnv%2FildDHrjiJDdPFFd1iD_S2nXi3cqdCE3TicwD2nuIfq_SFwjFJDaYFCe1JDkZCnd47ncqjncTImAZgDdCf9NfElwkCEfWsl_PHr31DZeaCkfWslXD3G3fEclZCw33fk_lHZc4infW7nIwIF3vIpkX7nIwIF3kiF2zfBInIFEqIF7WgCbUftInIFEqx93vIpkZ",
-				"sponsored_impression_url": "https://imp.mt48.net/static?id=7RHzfOIXjFEYsBdvIpkZ1p8YfZDXfpqWfZHm1Clk4CHnj9wWIBdvIpkY7n4YIFckiGIw5FwqgCLZfplnx%3DXNHmEuIF%2Bk5FwqgClWfpxnHF2uxmETIF4kiFzU5FwqgCfafQ8Z4ClW1Clk1CqW4Qqk4tIZJ%3Dzk5F%2BdJF7wxQkX7nIwIF3KiF2zfBInIFEqGr3%2Bx%3DEKiF2zfBIws93wxn%2BNJczOiF3Kx97vHmDz",
+				"sponsored_position": 2,
+				"sponsored_click_url": "https://bridge.pdx1.admarketplace.net/ctp?version=1.0.0&encp=x9IwxQkY7ncqxnwqgCfafQ2a4p2_fQfZfQfX1pxYftINI94vIpkZ1p8k1p2k1C8kfZxX1pHd4QlnxmXVj%3D_dJCkY7RedHReTiF2zfCbW4YIWjF7Qx%3DfzftaWfplnx9EOiF2zfCbW4YIYIGcdj%3DfzfCx_4C8d1pHW1C8YftIqIG4kjG7TgFNkj9eZ7C4e7C7%3D7C7%3Djrjr5ncuHGvVJO_QJmkwfqIOJ%3DcQimIYiF3NsBDZ3R3NIYDZ3%3DcqJFcYimEkjGfufQbwfQIYIFHwfk3WIczZJczq4pIqf%3DHdHQqmHF8d4CLafQfZHnld4C8YICewHZ8m1pbk1%3DldICxd4%3DDWIQ8dfp7qfZ8kI%3DfZ4BDY4nNmx9EO7C4lfCbW4YDY4ndnHF3vItDZ3%3DcqJBINI9IQx%3DfzftaY4C8W7ncqjn4NJGevIpkXfplk7ncqjn4YiF2z1pfWfBINI9IvIpkr4pfWfBINI9INiF2z4QLYfBINI9IOxnwqgClWfCqnHF3mirjvIpkZ4CxafZLk4CqnHF3miFzvIpkYfplY7ncqjncTImAYgF49DnIQfRNnFq33fwvl2nd1EkqdCnd%3DiD_DEC3g3lwPCC76il_DEGw4JEErFwj4sD_SIrj13%3DN%2FCwjEfk_DDnX43dw_Cw3esEvlCGw13d7SCGvE7ncqjncTImAZgDdCf9NfElwkCEfWsl_PHr31iCeaCDfWslXD3G3fE%3DxdCGveslzlIrvgElE_7nIwIF3vIpkX7nIwIF3kiF2zfBInIFEqIF7WgCbUftInIFEqx93vIpkZ",
+				"sponsored_impression_url": "https://imp.mt48.net/static?id=7RHzfOIXjFEYsBdvIpkZ1p8k1p2k1C8ZfZ8ZfCLrfQbnj9wWIBdvIpkY7n4YIFckiGIw5FwqgCLZfplnx%3DXNHmEuIF%2Bk5FwqgClWfpxnHF2uxmETIF4kiFzU5FwqgCfafQ2a4p2%2BfQ2Z4Zla4QDmfBIZJ%3Dzk5F%2BdJF7wxQkY7nIwIF3KiF2zfBInIFEqGr3%2Bx%3DEKiF2zfBIws93wxn%2BNJczOiF3Kx97vHmDz",
 				"sponsored_tile_id": 74301,
 				"partner": "amp",
 				"favicon": "https://ads-img.mozilla.org/v1/images?image_data=CjoKOGh0dHBzOi8vYW1wLWFzc2V0LjQ1dHUxYzAuY29tL2Fzc2V0cy8xMDExLzE2MDI1MTczODUuanBnEiCPWEpTJukrjsNjZdZ-ENKI3O38x6nmTcNlFXn6RNaaQQ",
@@ -209,33 +225,17 @@ window.__STARTUP_STATE__ = {
 			},
 			{
 				"isDefault": true,
-				"url": "https://www.expedia.com/partnernetwork/p/gp/camref:1100l3ZXvb/pubref:382235109036691456?mfadid=adm",
+				"url": "https://www.expedia.com/partnernetwork/p/gp/camref:1100l3ZXvb/pubref:382484492332318720?mfadid=adm",
 				"hostname": "expedia",
 				"sendAttributionRequest": false,
 				"label": "Expedia",
 				"show_sponsored_label": true,
-				"sponsored_position": 2,
-				"sponsored_click_url": "https://bridge.pdx1.admarketplace.net/ctp?version=1.0.0&encp=x9IwxQkY7ncqxnwqgCfafQ8Z4ClW1CbZ4QH_fC2d4OINI94vIpkZ1p8YfZDXfpqX4pq_fpH_4pDnxmXVj%3D_dJCkY7RedHReTiF2zfCbW4YIWjF7Qx%3DfzftaWfplnx9EOiF2zfCbW4YIYIGcdj%3DfzfCx_4Cl_1CldfCHXftIqIG4kjG7TgFNkj9eZ7C4e7C7%3D7C7%3Djrjr5nEax%3DEqiFlUHmzu7C7%3Dx%3DcYj%3D_wxn_wj9jVxnTwfqIW7C7%3DIrbwfqIQHFdYIFHwfklXfCbWJp4iF9IO7C7%3Dx9EOxnEn7C4efZLYfQfdfCb_fpfm4QqX4pDm7C4%3DJFINI%3Dwq7C4lHF3u7ncqjn4WHZkX5QbafpbnHF3mHmcux%3DwqgC8_fQ8nHF3mHr7vIpkXfp2r1BINI9IvIpkr4ClrfBINI9INiF2z1pfXftINI9IOxnwqgClk4ZfnHF3mirjvIpkZ4CLa1pHWfC2nHF3miFzvIpkXfZHd7ncqjncTImAYgDdPIrw4iqkXCE3e4DdlCC71inuaCq3EfOInIFEqiF2zfBInIFEqj%3DwqgClnInEwI%3DEOxpkW5QbnInEwI9ekiF2zfWyy",
-				"sponsored_impression_url": "https://imp.mt48.net/static?id=7RHzfOIXjFEYsBdvIpkZ1p8YfZDXfpqWfZHm1Clk4CHnj9wWIBdvIpkY7n4YIFckiGIw5FwqgClW4px%2B7ReTHF4wJFEUjtdvIpkXfpbr7ncq5G4wJ%3DEQj%3DwVJOdvIpkZ1p8YfZDXfpqX4pq%2BfpH%2B4pDnxmXVjtdUjFdOIG8zfOInIFEqGmwqgClnInEwIczksGewGmwqgClnIGNkIG7UHFXKHnwqGreYiF4wg2yy",
+				"sponsored_position": 3,
+				"sponsored_click_url": "https://bridge.pdx1.admarketplace.net/ctp?version=1.0.0&encp=x9IwxQkY7ncqxnwqgCfafQ2a4p2_fQfZfQfX1pxYftINI94vIpkZ1p8k1p2k1C8kfZxX1pHd4Q8nxmXVj%3D_dJCkZ7RedHReTiF2zfCbW4YIWjF7Qx%3DfzftaWfplnx9EOiF2zfCbW4YIYIGcdj%3DfzfCx_4C8d1pHW1C8YftIqIG4kjG7TgFNkj9eZ7C4e7C7%3D7C7%3Djrjr5nEax%3DEqiFlUHmzu7C7%3Dx%3DcYj%3D_wxn_wj9jVxnTwfqIW7C7%3DIrbwfqIQHFdYIFHwfklXfCbWJp4iF9IO7C7%3Dx9EOxnEn7C4efZLY4pLk4pqYfZfYfZla4Z8W7C4%3DJFINI%3Dwq7C4lHF3u7ncqjn4WHZkX5QbafpbnHF3mHmcux%3DwqgC8_fQ8nHF3mHr7vIpkXfp2r1BINI9IvIpkr4ClrfBINI9INiF2z1pfXftINI9IOxnwqgClk4ZfnHF3mirjvIpkZ4CLa1pHWfC2nHF3miFzvIpkXfZHd7ncqjncTImAYgDdPIrw13%3DxWCq3osDdPCGw4sqDkCRv7jYInIFEqiF2zfBInIFEqj%3DwqgClnInEwI%3DEOxpkW5QbnInEwI9ekiF2zfWyy",
+				"sponsored_impression_url": "https://imp.mt48.net/static?id=7RHzfOIXjFEYsBdvIpkZ1p8k1p2k1C8ZfZ8ZfCLrfQbnj9wWIBdvIpkY7n4YIFckiGIw5FwqgClW4px%2B7ReTHF4wJFEUjtdvIpkXfpbr7ncq5G4wJ%3DEQj%3DwVJOdvIpkZ1p8k1p2k1C8kfZxX1pHd4Q8nxmXVjtdUjFdOIG8zfYInIFEqGmwqgClnInEwIczksGewGmwqgClnIGNkIG7UHFXKHnwqGreYiF4wg2yy",
 				"sponsored_tile_id": 75171,
 				"partner": "amp",
 				"favicon": "https://ads-img.mozilla.org/v1/images?image_data=CnAKbmh0dHBzOi8vYW1wLWFzc2V0LjQ1dHUxYzAuY29tL2Fzc2V0cy8xNDMyL2ZkNWJjODZjYjRjODg1MDgyZTY2ZGY4NzdlYjQ0OTRjZWIyYzY2ZDc2ODVlMzdhODIwNDAxYjQ3NzI4MzUwOTEuanBnEiDbDveiYPQFQ7g2IKeCTiQbPNJ-jP2XW0pTEX0dzb5N3w",
-				"faviconSize": 200,
-				"typedBonus": true
-			},
-			{
-				"isDefault": true,
-				"url": "https://bestbuy.7tiv.net/c/3798038/1671732/10014?sharedid=privacyopen&subid1=382235109036691456&mfadid=adm&subid1=382235109036691456&mfadid=adm",
-				"hostname": "bestbuy.7tiv",
-				"sendAttributionRequest": false,
-				"label": "Best Buy",
-				"show_sponsored_label": true,
-				"sponsored_position": 3,
-				"sponsored_click_url": "https://bridge.pdx1.admarketplace.net/ctp?version=1.0.0&encp=x9IwxQkY7ncqxnwqgCfafQ8Z4ClW1CbZ4QH_fC2d4OINI94vIpkZ1p8YfZDXfpqX4pq_fpH_4pHnxmXVj%3D_dJCkZ7RedHReTiF2zfCbW4YIWjF7Qx%3DfzftaWfplnx9EOiF2zfCbW4YIYIGcdj%3DfzfCx_4Cl_1CldfCHXftIqIG4kjG7TgFNkj9eZ7C4e7C7%3D7C7%3DHnEZj%3D7dsBarj%3Dwm5n_wjtDY3nfwfqHZ4Zqafpfa7C7%3DfCHrfCxZfODY3QlWfplk7C4%3DxmNNxnEqiF2wfk3WxnwmHF4_JrewJODY4R4dHnwqfBDZ3pfafQ8Z4ClW1CbZ4QH_fC2d4ODY4ndnHF3vItDZ3%3DcqJBDY4R4dHnwqfBDZ3pfafQ8Z4ClW1CbZ4QH_fC2d4ODY4ndnHF3vItDZ3%3DcqJBINI9IQx%3DfzftaYfpbW7ncqjn4NJGevIpkZ4Zlk7ncqjn4YiF2zfCqk4pbnHF3miF2z4Z2a1pxnHF3mHFwqgClk1pqZ7ncqjn7YiF2zfClY4YINI9IojmwqgCfr4CqXfpxkfOINI9IvJmwqgC8kfZLnHF3mHFXRJZ8zCGvRsDdSCCc4ElldCD34fq_SirN13cDY7nIwIF3vIpkX7nIwIF3kiF2zfBInIFEqIF7WgCbUftInIFEqx93vIpkZ",
-				"sponsored_impression_url": "https://imp.mt48.net/static?id=7RHzfOIXjFEYsBdvIpkZ1p8YfZDXfpqWfZHm1Clk4CHnj9wWIBdvIpkY7n4YIFckiGIw5FwqgCl%2B4p2W7ReTHF4wJFEUjtdvIpkXfpbr7ncq5G4wJ%3DEQj%3DwVJOdvIpkZ1p8YfZDXfpqX4pq%2BfpH%2B4pHnxmXVjtdUjFdOIG8zfYInIFEqGmwqgClnInEwIczksGewGmwqgClnIGNkIG7UHFXKHnwqGreYiF4wg2yy",
-				"sponsored_tile_id": 74887,
-				"partner": "amp",
-				"favicon": "https://ads-img.mozilla.org/v1/images?image_data=CnAKbmh0dHBzOi8vYW1wLWFzc2V0LjQ1dHUxYzAuY29tL2Fzc2V0cy8xMDE1L2JmNWMwMzkyOTA5YTVkYzY0MjhjMzk3OGIzOWZmNzU5MTliYzJiNjIwYzljMWNmYTJhMmVmY2EyNWVlOGY3MTkuanBnEiAXuialzfT3fkFBZwYfGjYefHHmKk6-rFvckUd5Pf7EHQ",
 				"faviconSize": 200,
 				"typedBonus": true
 			},
@@ -771,7 +771,7 @@ window.__STARTUP_STATE__ = {
 		},
 		"spocs": {
 			"spocs_endpoint": "https://spocs.getpocket.com/spocs",
-			"lastUpdated": 1795200144624,
+			"lastUpdated": 1795255206203,
 			"data": {
 				"settings": {
 					"feature_flags": {
@@ -898,4 +898,5 @@ window.__STARTUP_STATE__ = {
 	}
 };
 
-ã=S$           k ”–J+ÿÿÿÿ       :about:home alt-data 1;10188,script version 20240606181944   ¬¾
+›I
+(AÎ           k|ÚJ+¸ÿÿÿÿ       :about:home alt-data 1;10188,script version 20240606181944   ­

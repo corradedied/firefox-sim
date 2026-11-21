@@ -2,12 +2,43 @@ run = "bash start.sh"
 
 [nix]
 channel = "stable-24_05"
-packages = ["firefox", "xorg.xorgserver", "x11vnc", "novnc", "openbox", "wmctrl", "xbindkeys", "xdotool"]
+packages = [
+    "firefox",
+    "xorg.xorgserver",
+    "xorg.xdpyinfo",
+    "x11vnc",
+    "novnc",
+    "openbox",
+    "procps"
+]
 
 [[ports]]
 localPort = 8080
 externalPort = 80
 
 [deployment]
-deploymentTarget = "cloudrun"
-run = "bash start.sh"
+run = ["bash", "start.sh"]
+
+[workflows]
+runButton = "Project"
+
+[[workflows.workflow]]
+name = "Project"
+mode = "parallel"
+author = "agent"
+
+[[workflows.workflow.tasks]]
+task = "workflow.run"
+args = "Firefox desktop"
+
+[[workflows.workflow]]
+name = "Firefox desktop"
+author = "agent"
+
+[[workflows.workflow.tasks]]
+task = "shell.exec"
+args = "bash start.sh"
+waitForPort = 8080
+
+[workflows.workflow.metadata]
+outputType = "console"

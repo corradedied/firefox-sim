@@ -1,0 +1,13 @@
+9
+
+https://gtm.firefox.com/_/service_worker
+https://gtm.firefox.com/_/service_worker/6b40/sw.js?origin=https%3A%2F%2Fwww.firefox.com
+false
+{69be042a-260e-451a-a438-a24a388d67a4}
+1
+1795247977072751
+1795247977074638
+1795247977027299
+0
+true
+#
